@@ -2,6 +2,8 @@
 
 ## Phase 0: campaign infrastructure
 
+Use `ReproduceICML` as the local parent workspace. Keep the campaign repository, template repository, and independent paper repositories beneath that parent as described in [Repository and workspace architecture](repository-architecture.md).
+
 Build one reusable reproduction harness that every paper can copy:
 
 - deterministic configuration and seed recording;
@@ -13,6 +15,8 @@ Build one reusable reproduction harness that every paper can copy:
 - unit and numerical-consistency tests;
 - a compact claim evidence table;
 - a final verification command that fails if required artifacts are absent.
+
+Create each paper repository from the shared template, then register its GitHub, Trackio Space, and Hugging Face Bucket URLs in the central campaign repository.
 
 ## Phase 1: flagship
 

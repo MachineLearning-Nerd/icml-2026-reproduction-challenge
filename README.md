@@ -26,8 +26,13 @@ The working target is **200-240 points**, at least **90% verified/falsified verd
 - [Competition findings](docs/competition-findings.md)
 - [Initial reproduction portfolio](docs/reproduction-portfolio.md)
 - [Campaign execution plan](docs/campaign-plan.md)
+- [Repository and workspace architecture](docs/repository-architecture.md)
 - [Live snapshot utility](scripts/challenge_snapshot.py)
 - [2026-07-16 snapshot](snapshots/2026-07-16.md)
+
+## Workspace name
+
+The local parent workspace for the campaign will be named **`ReproduceICML`**. It will contain this central campaign repository, a reusable template repository, and a `papers/` directory whose children are independent Git repositories—one per reproduced paper. Paper repositories will not be nested inside this central repository.
 
 ## Refresh the live data
 
