@@ -43,6 +43,15 @@ while IFS=$'\t' read -r paper_id github_repo; do
     exit 1
   fi
 
+  if ! sync_delta=$(git -C "$project_dir" rev-list --left-right --count '@{upstream}...HEAD' 2>/dev/null); then
+    printf '%s: no GitHub tracking branch is configured\n' "$paper_id" >&2
+    exit 1
+  fi
+  if [[ $sync_delta != $'0\t0' ]]; then
+    printf '%s: committed branch is not synchronized with GitHub (%s)\n' "$paper_id" "$sync_delta" >&2
+    exit 1
+  fi
+
   if ! jq -e --arg tag "paper-${paper_id}" \
     '(.tags // []) | index("icml2026-repro") != null and index($tag) != null' \
     "$project_dir/.trackio/metadata.json" >/dev/null; then
