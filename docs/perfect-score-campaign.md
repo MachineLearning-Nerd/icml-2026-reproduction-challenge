@@ -11,7 +11,7 @@ relying on these numbers.
 | Priority | Paper | Score | Non-full claims | Judge-identified gap | Attempt state |
 |---:|---|---:|---|---|---|
 | done | `4vztmTrGhd` | **4/4** | none | Three-layer half was missing | **official high-quality perfect score** |
-| 2 | `uG4IOdaAGk` | 5/6 | C3 toy | No large-poset scalability/timing evidence | pending |
+| 2 | `uG4IOdaAGk` | 5/6 | C3 toy | Published n=8192/timing/accuracy repair at Space `9f9dfe2`; official re-verdict pending | under verdict |
 | 3 | `ub9PwBtHqD` | 3/4 | C2 toy | Random-only baseline; tiny synthetic problems; observed MSE often worse | pending |
 | 4 | `QO82qIzEsP` | 3/4 | C2 toy | No SOCP; single newsvendor proxy rather than released benchmarks | pending |
 | 5 | `vWQk8Kdlhy` | 5/6 | C3 toy | Inconsistent Markov-blanket settings and reduced Fashion-MNIST SSL | pending |
