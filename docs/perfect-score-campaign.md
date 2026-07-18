@@ -14,7 +14,7 @@ relying on these numbers.
 | done | `uG4IOdaAGk` | **6/6** | none | n=8192/timing/accuracy repair accepted | **official high-quality perfect score** |
 | done | `ub9PwBtHqD` | **4/4** | none | Full-scale ImageNet/ViT + six-SOTA repair accepted | **official high-quality perfect score** |
 | done | `QO82qIzEsP` | **4/4** | none | Full California Housing SOCP + complete baseline grids accepted | **official high-quality perfect score** |
-| 5 | `vWQk8Kdlhy` | 5/6 | C3 toy | Inconsistent Markov-blanket settings and reduced Fashion-MNIST SSL | pending |
+| 5 | `vWQk8Kdlhy` | 5/6 | C3 toy | Reconciling source/appendix Markov drift and replacing reduced SSL with full 60k/10k, 5,000-step Fashion-MNIST | in progress |
 | 6 | `utTapVWtc7` | 5/6 | C1 toy | NAS accuracy proxy is not code accuracy | pending |
 | 7 | `73YmKB7KpW` | 4/6 | C3 inconclusive | Real-world-data half missing | pending |
 | 8 | `C4JJrPSwpy` | 4/6 | C3 inconclusive | “First” is a priority claim; no prior-art audit | pending |
