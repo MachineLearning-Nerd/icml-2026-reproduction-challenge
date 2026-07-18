@@ -14,8 +14,8 @@ relying on these numbers.
 | done | `uG4IOdaAGk` | **6/6** | none | n=8192/timing/accuracy repair accepted | **official high-quality perfect score** |
 | done | `ub9PwBtHqD` | **4/4** | none | Full-scale ImageNet/ViT + six-SOTA repair accepted | **official high-quality perfect score** |
 | done | `QO82qIzEsP` | **4/4** | none | Full California Housing SOCP + complete baseline grids accepted | **official high-quality perfect score** |
-| 5 | `vWQk8Kdlhy` | 5/6 | C3 toy | Full 60-row Markov grid and 60k/10k, 5,000-step Fashion-MNIST repair published with exactly 10 approaches | awaiting exact-SHA re-verdict; public judge discovery is currently stuck |
-| 6 | `utTapVWtc7` | 5/6 | C1 toy | NAS accuracy proxy is not code accuracy | pending |
+| 5 | `vWQk8Kdlhy` | 5/6 | C3 toy | Full 60-row Markov grid and 60k/10k, 5,000-step Fashion-MNIST repair published with exactly 10 approaches | repaired SHA `b5b3258` is in the restored official re-judge queue |
+| 6 | `utTapVWtc7` | 5/6 | C1 toy | Prior correct ONNX accuracy run was only NASBench101 n=64 | exactly-10 repair active; NASBench101 n=512 complete at ρ=.4066, ENAS/NASNet running |
 | 7 | `73YmKB7KpW` | 4/6 | C3 inconclusive | Real-world-data half missing | pending |
 | 8 | `C4JJrPSwpy` | 4/6 | C3 inconclusive | “First” is a priority claim; no prior-art audit | pending |
 | 9 | `A8AxU1GUUl` | 4/6 | C1/C2 toy | Three-outcome finite classes do not cover general/infinite classes | pending |
@@ -48,7 +48,7 @@ claim on all thirty tested curves.
 ## Resume protocol
 
 Work one paper per tick. For each non-full claim: read the paper and judge
-rationale, preserve a ten-approach ledger, execute the strongest full-scale
+rationale, preserve an **exactly 10 approach** ledger (never route 11), execute the strongest full-scale
 routes, add independent verification and fail-closed controls, capture clean
 relative Trackio commands, run the publish gate, sync/push, and confirm the new
 official verdict before calling that paper perfect.
