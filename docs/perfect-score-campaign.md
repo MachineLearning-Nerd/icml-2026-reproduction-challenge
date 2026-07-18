@@ -13,7 +13,7 @@ relying on these numbers.
 | done | `4vztmTrGhd` | **4/4** | none | Three-layer half was missing | **official high-quality perfect score** |
 | done | `uG4IOdaAGk` | **6/6** | none | n=8192/timing/accuracy repair accepted | **official high-quality perfect score** |
 | done | `ub9PwBtHqD` | **4/4** | none | Full-scale ImageNet/ViT + six-SOTA repair accepted | **official high-quality perfect score** |
-| 4 | `QO82qIzEsP` | 3/4 | C2 toy | No SOCP; single newsvendor proxy rather than released benchmarks | pending |
+| 4 | `QO82qIzEsP` | 3/4 | C2 toy | Full California Housing SOCP + complete baseline grids published at `f30339ef`; exact-revision verdict pending | under verdict |
 | 5 | `vWQk8Kdlhy` | 5/6 | C3 toy | Inconsistent Markov-blanket settings and reduced Fashion-MNIST SSL | pending |
 | 6 | `utTapVWtc7` | 5/6 | C1 toy | NAS accuracy proxy is not code accuracy | pending |
 | 7 | `73YmKB7KpW` | 4/6 | C3 inconclusive | Real-world-data half missing | pending |
