@@ -12,7 +12,7 @@ relying on these numbers.
 |---:|---|---:|---|---|---|
 | done | `4vztmTrGhd` | **4/4** | none | Three-layer half was missing | **official high-quality perfect score** |
 | done | `uG4IOdaAGk` | **6/6** | none | n=8192/timing/accuracy repair accepted | **official high-quality perfect score** |
-| 3 | `ub9PwBtHqD` | 3/4 | C2 toy | Random-only baseline; tiny synthetic problems; observed MSE often worse | pending |
+| 3 | `ub9PwBtHqD` | 3/4 | C2 toy at stale SHA `e42a5ea` | Full-scale ImageNet/ViT + six-SOTA repair published at `69a5618` | **under exact-SHA verdict** |
 | 4 | `QO82qIzEsP` | 3/4 | C2 toy | No SOCP; single newsvendor proxy rather than released benchmarks | pending |
 | 5 | `vWQk8Kdlhy` | 5/6 | C3 toy | Inconsistent Markov-blanket settings and reduced Fashion-MNIST SSL | pending |
 | 6 | `utTapVWtc7` | 5/6 | C1 toy | NAS accuracy proxy is not code accuracy | pending |
