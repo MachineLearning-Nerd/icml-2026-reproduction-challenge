@@ -19,7 +19,7 @@ python3 scripts/perfect_score_inventory.py --owner DineshAI
 | done | `ub9PwBtHqD` | **4/4** | none | Full-scale ImageNet/ViT + six-SOTA repair accepted | **official high-quality perfect score** |
 | done | `QO82qIzEsP` | **4/4** | none | Full California Housing SOCP + complete baseline grids accepted | **official high-quality perfect score** |
 | done | `vWQk8Kdlhy` | **6/6** | none | Full 60-row Markov grid and 60k/10k, 5,000-step Fashion-MNIST repair | **official high-quality perfect score at `b5b3258`** |
-| active | `utTapVWtc7` | 5/6 | C1 toy | Prior correct ONNX accuracy run was only NASBench101 n=64 | exactly-10 repair: NASBench101 .4066 and ENAS .2495 complete at n=512; NASNet running |
+| under verdict | `utTapVWtc7` | 5/6 | C1 toy at stale SHA | Prior correct ONNX accuracy run was only NASBench101 n=64 | exactly-10 repair published at `19231479`: NASBench101/ENAS/NASNet .4066/.2495/.2067 at n=512 |
 | pending | `Cxdj2GYZ4c` | 2/6 | C1/C2 toy, C3 inconclusive | Small MAPF grids; Schrödinger bridge omitted | pending |
 | pending | `qIOcJSCGn2` | 2/6 | C1/C3 inconclusive | Direct survival-distribution evidence and benchmarks omitted | pending |
 | pending | `tibRKqUHcv` | 2/6 | C2/C3 inconclusive | Sample-complexity and bilevel cost-learning omitted | pending |
