@@ -1,9 +1,9 @@
 # Perfect-score campaign
 
 Initial live snapshot: **2026-07-18 08:48 UTC** from the official Spaces, claims,
-and verdict datasets. After the `uG4IOdaAGk` re-verdict at 09:50 UTC, DineshAI is
-at **194/216** across 40 judged logbooks. Eleven papers remain non-perfect,
-covering eighteen non-full claims and a 22-point gap. Re-run the snapshot before
+and verdict datasets. After the `ub9PwBtHqD` re-verdict at 10:53 UTC, DineshAI is
+at **195/216** across 40 judged logbooks. Ten papers remain non-perfect,
+covering seventeen non-full claims and a 21-point gap. Re-run the snapshot before
 relying on these numbers.
 
 ## Current repair queue
@@ -12,7 +12,7 @@ relying on these numbers.
 |---:|---|---:|---|---|---|
 | done | `4vztmTrGhd` | **4/4** | none | Three-layer half was missing | **official high-quality perfect score** |
 | done | `uG4IOdaAGk` | **6/6** | none | n=8192/timing/accuracy repair accepted | **official high-quality perfect score** |
-| 3 | `ub9PwBtHqD` | 3/4 | C2 toy at stale SHA `e42a5ea` | Full-scale ImageNet/ViT + six-SOTA repair published at `69a5618` | **under exact-SHA verdict** |
+| done | `ub9PwBtHqD` | **4/4** | none | Full-scale ImageNet/ViT + six-SOTA repair accepted | **official high-quality perfect score** |
 | 4 | `QO82qIzEsP` | 3/4 | C2 toy | No SOCP; single newsvendor proxy rather than released benchmarks | pending |
 | 5 | `vWQk8Kdlhy` | 5/6 | C3 toy | Inconsistent Markov-blanket settings and reduced Fashion-MNIST SSL | pending |
 | 6 | `utTapVWtc7` | 5/6 | C1 toy | NAS accuracy proxy is not code accuracy | pending |
