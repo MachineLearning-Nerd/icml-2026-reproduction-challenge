@@ -1,15 +1,16 @@
 # Perfect-score campaign
 
-Authoritative live snapshot: **2026-07-18 08:48 UTC** from the official Spaces,
-claims, and verdict datasets. DineshAI is at **191/216** across 40 judged
-logbooks. Thirteen papers are non-perfect, covering twenty non-full claims and a
-25-point gap. Re-run the snapshot before relying on these numbers.
+Initial live snapshot: **2026-07-18 08:48 UTC** from the official Spaces, claims,
+and verdict datasets. After the `4vztmTrGhd` re-verdict at 09:02 UTC, DineshAI is
+at **193/216** across 40 judged logbooks. Twelve papers remain non-perfect,
+covering nineteen non-full claims and a 23-point gap. Re-run the snapshot before
+relying on these numbers.
 
 ## Current repair queue
 
 | Priority | Paper | Score | Non-full claims | Judge-identified gap | Attempt state |
 |---:|---|---:|---|---|---|
-| 1 | `4vztmTrGhd` | 2/4 | C1 inconclusive | Three-layer half never tested | **10/10 approaches pass; revision synced** |
+| done | `4vztmTrGhd` | **4/4** | none | Three-layer half was missing | **official high-quality perfect score** |
 | 2 | `uG4IOdaAGk` | 5/6 | C3 toy | No large-poset scalability/timing evidence | pending |
 | 3 | `ub9PwBtHqD` | 3/4 | C2 toy | Random-only baseline; tiny synthetic problems; observed MSE often worse | pending |
 | 4 | `QO82qIzEsP` | 3/4 | C2 toy | No SOCP; single newsvendor proxy rather than released benchmarks | pending |
