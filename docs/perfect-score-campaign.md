@@ -1,8 +1,8 @@
 # Perfect-score campaign
 
-Live snapshot: **2026-07-19 00:41 UTC** from the official verdict dataset.
-DineshAI is at **253/300** across 58 judged logbooks. Nineteen papers remain
-non-perfect, with a 47-point gap. RegressLM and vMcu are now exact-SHA high-quality perfect scores;
+Live snapshot: **2026-07-19 01:15 UTC** from the official verdict dataset.
+DineshAI is at **254/300** across 58 judged logbooks. Eighteen papers remain
+non-perfect, with a 46-point gap. RegressLM, vMcu, and G4D are now exact-SHA high-quality perfect scores;
 newly judged deficient papers can expand the denominator. Generate the authoritative current
 inventory directly from verdict records, without the 1,000-Space API limit:
 
@@ -20,6 +20,7 @@ python3 scripts/perfect_score_inventory.py --owner DineshAI
 | done | `QO82qIzEsP` | **4/4** | none | Full California Housing SOCP + complete baseline grids accepted | **official high-quality perfect score** |
 | done | `vWQk8Kdlhy` | **6/6** | none | Full 60-row Markov grid and 60k/10k, 5,000-step Fashion-MNIST repair | **official high-quality perfect score at `b5b3258`** |
 | done | `utTapVWtc7` | **6/6** | none | Prior correct ONNX accuracy run was only NASBench101 n=64 | **official high-quality perfect score at exact SHA `19231479`** |
+| done | `G4D0YzzZEk` | **4/4** | none | Claim-2 audit used only n=5 point clouds | **official high-quality perfect score at exact SHA `700f7a6f`; exactly 10 routes** |
 | pending | `Cxdj2GYZ4c` | 2/6 | C1/C2 toy, C3 inconclusive | Small MAPF grids; Schrödinger bridge omitted | pending |
 | pending | `gFPPTokv9C` | 2/6 | C1/C2 toy, C3 inconclusive | nX=6 identities; top-label and sample-complexity evidence omitted | pending |
 | pending | `qIOcJSCGn2` | 2/6 | C1/C3 inconclusive | Direct survival-distribution evidence and benchmarks omitted | pending |
@@ -37,7 +38,6 @@ python3 scripts/perfect_score_inventory.py --owner DineshAI
 | pending | `oUv02QKUxG` | 2/4 | C1/C2 toy | Two-to-four-state MDPs only | pending |
 | pending | `potpaozpjv` | 2/4 | C1/C2 toy | Small tabular MDPs and incomplete theorem scope | pending |
 | pending | `ry5HitnXzc` | 2/4 | C1/C2 toy | One binary model and one epsilon/delta point; lower bound untested | pending |
-| pending | `G4D0YzzZEk` | 3/4 | C2 toy | Eight-point clouds only | pending |
 | pending | `nf7JT1jCSy` | 3/4 | C1 toy | Formula checked without a real multimodal classifier/dataset | pending |
 | done | `vMcu1h3fOV` | **4/4** | none | n=80, d=8 synthetic ARD only | **official high-quality perfect score at exact SHA `21814bf5`; 9 support/1 adverse accepted** |
 
