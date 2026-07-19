@@ -1,9 +1,9 @@
 # Perfect-score campaign
 
-Live snapshot: **2026-07-18 21:53 UTC** from the official verdict dataset.
-DineshAI is at **245/290** across 56 judged logbooks. Twenty papers remain
-non-perfect, with a 45-point gap. This expanded after the repaired judge
-discovery loop saved a 243-verdict batch. Generate the authoritative current
+Live snapshot: **2026-07-19 00:08 UTC** from the official verdict dataset.
+DineshAI is at **252/300** across 58 judged logbooks. Twenty papers remain
+non-perfect, with a 48-point gap. RegressLM is now exact-SHA high-quality 6/6;
+newly judged deficient papers can expand the denominator. Generate the authoritative current
 inventory directly from verdict records, without the 1,000-Space API limit:
 
 ```bash
@@ -19,8 +19,9 @@ python3 scripts/perfect_score_inventory.py --owner DineshAI
 | done | `ub9PwBtHqD` | **4/4** | none | Full-scale ImageNet/ViT + six-SOTA repair accepted | **official high-quality perfect score** |
 | done | `QO82qIzEsP` | **4/4** | none | Full California Housing SOCP + complete baseline grids accepted | **official high-quality perfect score** |
 | done | `vWQk8Kdlhy` | **6/6** | none | Full 60-row Markov grid and 60k/10k, 5,000-step Fashion-MNIST repair | **official high-quality perfect score at `b5b3258`** |
-| under verdict | `utTapVWtc7` | 5/6 | C1 toy at stale SHA | Prior correct ONNX accuracy run was only NASBench101 n=64 | exactly-10 repair published at `19231479`: NASBench101/ENAS/NASNet .4066/.2495/.2067 at n=512 |
+| done | `utTapVWtc7` | **6/6** | none | Prior correct ONNX accuracy run was only NASBench101 n=64 | **official high-quality perfect score at exact SHA `19231479`** |
 | pending | `Cxdj2GYZ4c` | 2/6 | C1/C2 toy, C3 inconclusive | Small MAPF grids; Schrödinger bridge omitted | pending |
+| pending | `gFPPTokv9C` | 2/6 | C1/C2 toy, C3 inconclusive | nX=6 identities; top-label and sample-complexity evidence omitted | pending |
 | pending | `qIOcJSCGn2` | 2/6 | C1/C3 inconclusive | Direct survival-distribution evidence and benchmarks omitted | pending |
 | pending | `tibRKqUHcv` | 2/6 | C2/C3 inconclusive | Sample-complexity and bilevel cost-learning omitted | pending |
 | pending | `VQt4w3lElX` | 3/6 | C1/C2/C3 toy | All evidence at n=8 | pending |
