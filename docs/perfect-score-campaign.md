@@ -1,8 +1,8 @@
 # Perfect-score campaign
 
-Live snapshot: **2026-07-19 00:08 UTC** from the official verdict dataset.
-DineshAI is at **252/300** across 58 judged logbooks. Twenty papers remain
-non-perfect, with a 48-point gap. RegressLM is now exact-SHA high-quality 6/6;
+Live snapshot: **2026-07-19 00:41 UTC** from the official verdict dataset.
+DineshAI is at **253/300** across 58 judged logbooks. Nineteen papers remain
+non-perfect, with a 47-point gap. RegressLM and vMcu are now exact-SHA high-quality perfect scores;
 newly judged deficient papers can expand the denominator. Generate the authoritative current
 inventory directly from verdict records, without the 1,000-Space API limit:
 
@@ -39,7 +39,7 @@ python3 scripts/perfect_score_inventory.py --owner DineshAI
 | pending | `ry5HitnXzc` | 2/4 | C1/C2 toy | One binary model and one epsilon/delta point; lower bound untested | pending |
 | pending | `G4D0YzzZEk` | 3/4 | C2 toy | Eight-point clouds only | pending |
 | pending | `nf7JT1jCSy` | 3/4 | C1 toy | Formula checked without a real multimodal classifier/dataset | pending |
-| under verdict | `vMcu1h3fOV` | 3/4 at stale SHA | C1 toy | n=80, d=8 synthetic ARD only | exactly-10 repair published at `21814bf5`: paper synthetic scale + all nine tabular datasets, 360 rows, 9 support/1 adverse |
+| done | `vMcu1h3fOV` | **4/4** | none | n=80, d=8 synthetic ARD only | **official high-quality perfect score at exact SHA `21814bf5`; 9 support/1 adverse accepted** |
 
 ## `4vztmTrGhd` Claim 1 — ten approaches
 
