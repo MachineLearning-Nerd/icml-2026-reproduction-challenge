@@ -17,6 +17,9 @@ In addition:
   precede, or substitute for the HF publish. Publish and verify on HF first,
   then mirror.
 - Never permit a claim update to remove or weaken an already-earned claim.
+- Compute: run CPU reproductions inline in the local venv; HF `cpu-upgrade` is
+  authorized (no cap) for CPU-heavy claims, but **GPU/T4 is not** — GPU-bound
+  claims stay BLOCKED. See `AGENTS_SCORE.md` § Compute policy.
 - Do not commit unless the user has authorized it; stage only scoped files.
 
 ## Fetching paper source (HTML)

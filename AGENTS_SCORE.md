@@ -28,6 +28,15 @@ to Hugging Face.
    HF HEAD. Until then, say `awaiting judge` and retain the old judged score as
    the baseline.
 
+## Compute policy
+
+CPU reproductions run inline in the local venv first. HF `cpu-upgrade` is
+authorized for CPU-heavy claims with **no spend cap** — prefer it over stranding
+a CPU-reachable claim, and log each paid run's status in
+`DINESHAI_SCORE_LEDGER.md`. **GPU/T4 is not authorized**: any genuinely
+GPU-bound claim stays BLOCKED (flag it explicitly, never spend on GPU). Keep
+paid subagent fan-out small; prefer doing reproductions inline.
+
 ## Reading source papers
 
 - Prefer ar5iv HTML: `https://ar5iv.org/abs/<arxiv_id>` (or
