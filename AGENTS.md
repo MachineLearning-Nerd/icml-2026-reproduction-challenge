@@ -51,10 +51,11 @@ blocked. The YPXD venv has **no `requests`**; in Python use stdlib
 - `HfApi().token` can be empty even when `hf auth whoami` is logged in. Use
   `get_token()` and pass `token=token` explicitly to `whoami`, downloads,
   `repo_info`, and uploads. Never print the token.
-- `HF_HUB_DISABLE_IMPLICIT_TOKEN=1` is intentionally set in this environment.
-  Therefore a bare `hf jobs list` can make an unauthenticated request and 401;
-  this is not a failed login. For read-only job inspection, use the YPXD venv
-  Python API with explicit `get_token()`:
+- `HF_HUB_DISABLE_IMPLICIT_TOKEN=1` is intentionally set in this environment, so
+  bare CLIs (`hf jobs list`, `hf ...`) send **no** token and 401 with "Invalid
+  username or password". This is a missing-token error — not a failed login and
+  not a credential or scope failure. For read-only job inspection, use the YPXD
+  venv Python API with an explicit `get_token()`:
 
   ```python
   jobs = list(HfApi().list_jobs(
@@ -64,7 +65,7 @@ blocked. The YPXD venv has **no `requests`**; in Python use stdlib
 
   If the CLI is unavoidable, use the venv binary and unset the flag for that
   command only: `env -u HF_HUB_DISABLE_IMPLICIT_TOKEN "$VENV_DIR/hf" jobs list`.
-  Do not pass a token on the command line.
+  Never pass a token on the command line (it leaks into shell history).
 - `refresh_ledger.py` is a live Hub reader, so it must call `get_token()` once
   and pass that value to both `HfApi(token=...)` and `hf_hub_download(...,
   token=...)`. Do not regress it to implicit-token calls: they emit
@@ -76,14 +77,6 @@ blocked. The YPXD venv has **no `requests`**; in Python use stdlib
 - Avoid Trackio publishing for this evidence path when it attempts artifact or
   bucket writes. Use `snapshot_download` followed by `upload_folder` with an
   explicit text-only allowlist and `HF_HUB_DISABLE_XET=1`.
-- `HF_HUB_DISABLE_IMPLICIT_TOKEN=1` is set here, so bare CLIs (`hf jobs list`,
-  `hf ...`) send **no** token and return 401 ("Invalid username or password") —
-  that is a missing-token error, not a credential or scope failure. For
-  read-only queries use the venv Python API with an explicit token, e.g.
-  `HfApi().list_jobs(namespace="DineshAI", status=["RUNNING","SCHEDULING"], token=get_token())`.
-  If the CLI is unavoidable, prefix `env -u HF_HUB_DISABLE_IMPLICIT_TOKEN` and
-  call the **venv** `hf` binary; never pass `--token` (it leaks into shell
-  history).
 
 ### Claims and logbooks
 
