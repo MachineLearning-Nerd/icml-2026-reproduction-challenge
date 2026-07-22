@@ -19,6 +19,28 @@ In addition:
 - Never permit a claim update to remove or weaken an already-earned claim.
 - Do not commit unless the user has authorized it; stage only scoped files.
 
+## Fetching paper source (HTML)
+
+Read exact claim/theorem wording from HTML, not the PDF. Prefer **ar5iv** (it
+preserves theorem numbering and inline math), fall back to arXiv native HTML,
+use PDF only as a last resort. Fetching is an outbound request — record the
+source URL/scope for each claim audit.
+
+```bash
+ARXIV=2601.05427   # the paper's arXiv id
+# 1) ar5iv (primary). ar5iv.org/abs/<id> redirects here:
+curl -sL -A "Mozilla/5.0" "https://ar5iv.labs.arxiv.org/html/$ARXIV" -o paper.html
+# 2) arXiv native HTML (fallback):
+curl -sL -A "Mozilla/5.0" "https://arxiv.org/html/$ARXIV" -o paper.html
+# 3) PDF last resort: curl the pdf then pdftotext/pypdf/pdfplumber:
+curl -sL "https://arxiv.org/pdf/$ARXIV" -o paper.pdf
+grep -niE "theorem|lemma|proposition|corollary" paper.html | head   # locate claims
+```
+
+The `-A` (User-Agent) header matters — default `curl`/`urllib` UAs can be
+blocked. The YPXD venv has **no `requests`**; in Python use stdlib
+`urllib.request` with a `User-Agent` header, or shell out to `curl` as above.
+
 ## Known failure modes — prevent recurrence
 
 ### Hugging Face client and auth
@@ -29,6 +51,24 @@ In addition:
 - `HfApi().token` can be empty even when `hf auth whoami` is logged in. Use
   `get_token()` and pass `token=token` explicitly to `whoami`, downloads,
   `repo_info`, and uploads. Never print the token.
+- `HF_HUB_DISABLE_IMPLICIT_TOKEN=1` is intentionally set in this environment.
+  Therefore a bare `hf jobs list` can make an unauthenticated request and 401;
+  this is not a failed login. For read-only job inspection, use the YPXD venv
+  Python API with explicit `get_token()`:
+
+  ```python
+  jobs = list(HfApi().list_jobs(
+      namespace="DineshAI", status=["RUNNING", "SCHEDULING"], token=get_token()
+  ))
+  ```
+
+  If the CLI is unavoidable, use the venv binary and unset the flag for that
+  command only: `env -u HF_HUB_DISABLE_IMPLICIT_TOKEN "$VENV_DIR/hf" jobs list`.
+  Do not pass a token on the command line.
+- `refresh_ledger.py` is a live Hub reader, so it must call `get_token()` once
+  and pass that value to both `HfApi(token=...)` and `hf_hub_download(...,
+  token=...)`. Do not regress it to implicit-token calls: they emit
+  unauthenticated requests under this environment's safety setting.
 - A metadata GET/`whoami` with write role does **not** prove the LFS/Xet bucket
   write route works. A 401 from preupload/bucket/Trackio artifact publishing is
   a separate binary-write-path failure, not evidence that text commits cannot
