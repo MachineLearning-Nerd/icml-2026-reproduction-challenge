@@ -36,6 +36,14 @@ In addition:
 - Avoid Trackio publishing for this evidence path when it attempts artifact or
   bucket writes. Use `snapshot_download` followed by `upload_folder` with an
   explicit text-only allowlist and `HF_HUB_DISABLE_XET=1`.
+- `HF_HUB_DISABLE_IMPLICIT_TOKEN=1` is set here, so bare CLIs (`hf jobs list`,
+  `hf ...`) send **no** token and return 401 ("Invalid username or password") —
+  that is a missing-token error, not a credential or scope failure. For
+  read-only queries use the venv Python API with an explicit token, e.g.
+  `HfApi().list_jobs(namespace="DineshAI", status=["RUNNING","SCHEDULING"], token=get_token())`.
+  If the CLI is unavoidable, prefix `env -u HF_HUB_DISABLE_IMPLICIT_TOKEN` and
+  call the **venv** `hf` binary; never pass `--token` (it leaks into shell
+  history).
 
 ### Claims and logbooks
 
