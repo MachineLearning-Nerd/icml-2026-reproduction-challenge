@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If this campaign control plane is useful, please cite this repository and the specific paper reproduction used."
+title: "ICML 2026 Reproduction Challenge Campaign"
+type: software
+version: "0.1.0"
+date-released: "2026-08-16"
+authors:
+  - family-names: Jinjala
+    given-names: Dinesh
+    affiliation: MachineLearning-Nerd
+repository-code: "https://github.com/MachineLearning-Nerd/icml-2026-reproduction-challenge"
+url: "https://github.com/MachineLearning-Nerd/icml-2026-reproduction-challenge"
+abstract: "A control plane for compute-aware paper selection, evidence standards, and independent reproductions in the ICML 2026 Agent Reproduction Challenge."
+keywords:
+  - ICML 2026
+  - reproduction
+  - reproducibility
+  - research software

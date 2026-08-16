@@ -2,6 +2,23 @@
 
 An evidence-driven campaign for competing in the [ICML 2026 Agent Reproduction Challenge](https://huggingface.co/spaces/ICML-2026-agent-repro/challenge) without relying on A100-class hardware.
 
+## Repository classification
+
+This is the collection control plane, not a paper reproduction. It has no
+single paper, OpenReview ID, author claim set, or paper-specific experimental
+result to cite. Paper-level citations, claim ledgers, branch audits, and
+author thank-you notes belong in the independent repositories under the
+papers/ workspace.
+
+This repository owns the campaign strategy, competition observations,
+selection queue, shared quality rules, and links between the paper
+repositories and their public evidence. Its name and sole main branch already
+describe that role, so no rename is needed.
+
+See [REPOSITORY_CLASSIFICATION.md](REPOSITORY_CLASSIFICATION.md) for the
+scope boundary and [AUTHOR_THANK_YOU.md](AUTHOR_THANK_YOU.md) for the
+collection-level note.
+
 This repository tracks:
 
 - the live competitive position;
